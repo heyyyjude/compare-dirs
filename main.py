@@ -16,31 +16,17 @@ logging.getLogger().disabled = False
 
 
 def run(comparison, backup_dir, source_dir):
+
     print(
-        "Files from the {} are not found in the {}.".format(backup_dir, source_dir)
+        "{:<50s}{:50s}".format(backup_dir, source_dir)
     )
-    print("------start--------")
+
     for i in comparison.backup_only_files_list:
-        print(i)
-    print("-------end---------")
+        print("{:<50s}{:50s}".format(i, "Not found"))
 
-    print("Files from the {} are not found in the {}.".format(source_dir, backup_dir))
-    print("------start--------")
     for i in comparison.source_only_files_list:
-        print(i)
-    print("-------end---------")
+        print("{:<50s}{:50s}".format("Not found", i))
 
-    print("symlinks from {} are not found in the {}.".format(backup_dir, source_dir))
-    print("------start--------")
-    for i in comparison.backup_only_symlinks_list:
-        print(i)
-    print("-------end---------")
-
-    print("symlinks from the {} are not found in the {}.".format(source_dir, backup_dir))
-    print("------start--------")
-    for i in comparison.source_only_symlinks_list:
-        print(i)
-    print("-------end---------")
 
 
 def main(backup_dir, source_dir):
