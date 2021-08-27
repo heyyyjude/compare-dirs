@@ -25,20 +25,19 @@ def run(comparison, backup_dir, source_dir):
     for i in comparison._backup_only_file_list:
         print("{:<70s}{:70s}".format(i, "Not found"))
 
-    print("-" * 70)
 
     for i in comparison._src_only_file_list:
         print("{:<70s}{:70s}".format("Not found", i))
 
     print("-" * 70)
 
-    print("Same file name but different md5 våalues.")
+    print("**Same file name but different md5 value**")
     for i in comparison._same_file_different_md5_list:
         print("{:<70s}".format(i))
 
     print("-" * 70)
 
-    print("Same file name and Same md5 values")
+    print("**Same file name and Same md5 value**")
     for i in comparison._same_file_same_md5_list:
         print("{:<70s}".format(i))
 
