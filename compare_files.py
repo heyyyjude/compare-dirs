@@ -90,8 +90,8 @@ class ComparisonPathOfFiles(object):
         ]
 
         for prefix_rel_path_src_file in self.source_path_of_files.relative_path_of_files_list:
-            rel_path_src_file = prefix_rel_path_src_file.replace(self.source_dir_prefix_path, "")
-
+            rel_path_src_file = prefix_rel_path_src_file.replace(
+                self.source_dir_prefix_path, "")
 
             if rel_path_src_file in backup_rel_path_of_files_list:
                 # logging.info(rel_path_src_file)
@@ -106,7 +106,8 @@ class ComparisonPathOfFiles(object):
                 )
 
                 abs_path_backup_file = os.path.join(
-                    self.backup_path_of_files.abs_prefix_path, rel_path_backup_file)
+                    self.backup_path_of_files.abs_prefix_path,
+                    rel_path_backup_file)
 
                 # logging.info(self.backup_path_of_files.abs_prefix_path)
                 # logging.info(self.backup_path_of_files.prefix)
@@ -153,7 +154,8 @@ class ComparisonPathOfFiles(object):
         ]
 
         for prefix_rel_path_backup_file in self.backup_path_of_files.relative_path_of_files_list:
-            rel_path_backup_file = prefix_rel_path_backup_file.replace(self.backup_dir_prefix_path, "")
+            rel_path_backup_file = prefix_rel_path_backup_file.replace(
+                self.backup_dir_prefix_path, "")
             if rel_path_backup_file in source_rel_path_of_files_list:
                 pass
             else:

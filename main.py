@@ -16,20 +16,28 @@ logging.getLogger().disabled = False
 
 
 def run(comparison, backup_dir, source_dir):
-
     print(
         "{:<70s}{:70s}".format(backup_dir, source_dir)
     )
 
+    print("-" * 70)
+
     for i in comparison._backup_only_file_list:
         print("{:<70s}{:70s}".format(i, "Not found"))
+
+    print("-" * 70)
 
     for i in comparison._src_only_file_list:
         print("{:<70s}{:70s}".format("Not found", i))
 
-    print("Same file name but different md5 values.")
+    print("-" * 70)
+
+    print("Same file name but different md5 våalues.")
     for i in comparison._same_file_different_md5_list:
         print("{:<70s}".format(i))
+
+    print("-" * 70)
+
     print("Same file name and Same md5 values")
     for i in comparison._same_file_same_md5_list:
         print("{:<70s}".format(i))
@@ -41,12 +49,12 @@ def main(backup_dir, source_dir):
     # os.chdir("../")
     # os.chdir(source_dir)
     source_dir_files_path = PathOfFiles(source_dir)
-    comparison = ComparisonPathOfFiles(backup_dir_files_path, source_dir_files_path)
+    comparison = ComparisonPathOfFiles(backup_dir_files_path,
+                                       source_dir_files_path)
     run(comparison, backup_dir, source_dir)
 
 
 if __name__ == "__main__":
-
     parser = argparse.ArgumentParser(
         description="Python scripts for comparing the location of files from two different directory"
     )
